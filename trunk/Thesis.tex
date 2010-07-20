@@ -1,0 +1,108 @@
+%
+% this file is encoded in utf-8
+% v1.7
+
+\documentclass[12pt, a4paper]{ntust_report}
+
+\input{common_env}  %基本的環境設定  無需改變  
+\usepackage{amsmath}
+\usepackage{cite}     % Sort all citations
+\usepackage{psfrag}   % Used to insert text into figures
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{color}    % Used to highlight comments
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage{cite}     % Sort all citations
+
+\usepackage{algorithmic} % pseudocode
+\usepackage{algorithm}
+\usepackage{float}
+\usepackage{amssymb}
+\floatname{algorithm}{Method}
+
+\usepackage{xspace}
+\newcommand{\comment}{\textcolor{red}}
+\newcommand{\todo}{\textcolor{blue}}
+\newcommand{\jmh}[1]{\textcolor{red}{#1 -- JMH}}
+\newcommand{\hc}[1]{\textcolor{blue}{#1 -- HC}}
+
+\def\centerhack#1{\hbox to 0pt{\hss\footnotesize #1\hss}}
+\def\dchack#1{\vbox to 0pt{\vss{\hbox to 0pt{\hss#1\hss}}\vss}}
+
+\newcounter{linecounter}
+\newcommand{\resetlinecounter}{\setcounter{linecounter}{1}}
+\newcommand{\llabel}[1]{\arabic{linecounter}. \addtocounter{linecounter}{-1}\refstepcounter{linecounter}\label{#1}\stepcounter{linecounter}}
+\newcommand{\declabel}{\addtocounter{linecounter}{-1}}
+
+\newcommand{\aboveleftarrow}[1]{{\buildrel #1 \over \longleftarrow}}
+\newcommand{\aboverightarrow}[1]{{\buildrel #1 \over \longrightarrow}}
+\newcommand{\aboveleftrightarrow}[1]{{\buildrel #1 \over
+    \leftrightarrow}}
+
+\renewcommand{\paragraph}[1]{\vspace{2mm}\noindent{\textbf{#1}}\quad}
+
+\newcommand{\sign}[2]{\textrm{Sign}_{#2}(#1)}
+\newcommand{\signature}[2]{\sigma_{#2}(#1)}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+
+
+
+\begin{document}
+\begin{CJK}{UTF8}{bsmi}   %%% ZZZ %%%  <<< 在這裡更改預設中文字型、編碼
+% 編碼：UTF8, Bg5, ...
+% 中文字型名稱：TeXLive 安裝有一套明體字 bsmi, 楷書與其他字型視你的 LaTeX CJK 系統裝設情況而定
+% 注意！ 修改時請一併修改此檔案末端之\end{ZZZ}
+% global CJK setting
+\CJKindent  %%% ZZZ %%%  段首內縮兩格
+
+\input{chinese_trans} %在此檔案處定義文章中的中文名詞
+
+	%----------------------------------------------------------------------------------------------------------------------------------------------------------
+	%%% 以下是載入前頁、本文、後頁
+	% 此行請勿更動
+	% 如需針對個別章節獨立編譯
+	% 請在 my_chapters.tex 檔裡對個別章節的 \input 指令以行首百分號方式做開關。
+	%----------------------------------------------------------------------------------------------------------------------------------------------------------
+	% front matter 前頁
+	% 包括封面、書名頁、中文摘要、英文摘要、誌謝、目錄、表目錄、圖目錄、符號說明
+	% 在撰寫各章草稿時，可以把此部份「關掉」，以節省無謂的編譯時間。
+	% 實際內容由
+	%    my_names.tex, my_cabstract.tex, my_eabstract.tex, my_ackn.tex, my_symbols.tex
+	% 決定
+	% ntust_frontpages.tex 此檔只提供整體架構的定義，不需更動
+	% 在撰寫各章草稿時，可以把此部份「關掉」，以節省無謂的編譯時間。
+	
+	\input{frontpages/ntust_frontpages.tex} 
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------------
+	% main body 論文主體。建議以「章」為檔案分割的依據。
+	% 以下為建議的命名分類
+	%   introduction.tex   related_work.tex  protocol.tex  evaluation.tex  conclusion.tex
+	% 做為這幾個「章」的檔案名稱，並將檔案存放於資料夾 sections/ 下
+	% 實際命名方式可以隨你意
+	% 在撰寫各章草稿時，可以把其他章節關掉 (行首加百分號)
+
+
+	\input{sections/Introduction.tex}
+	\input{sections/Method.tex}
+	\input{sections/Conclusion.tex}
+%----------------------------------------------------------------------------------------------------------------------------------------------------------
+	% back pages 後頁
+	% 包括參考文獻、附錄、自傳
+	% 實際內容由
+	%    my_bib.bib, my_appendix.tex, my_vita.tex
+	% 決定
+	% ntust_backpages.tex 此檔只提供整體架構的定義，不需更動
+	% 在撰寫各章草稿時，可以把此部份「關掉」，以節省無謂的編譯時間。
+	\input{backpages/ntust_backpages.tex}
+
+
+\end{CJK}  %%% ZZZ %%%
+\end{document} 
+ 
