@@ -1,0 +1,10 @@
+#summary One-sentence summary of this page.
+
+= ntust-thesis v1.4 釋出 =
+
+目前這個版本是需要用pdflatex編譯，
+而且其實已經是一年前的給學弟們使用的版本。
+不過這一年來的範本也沒有多大的變化，
+如果大家在使用上有什麼問題再通知我吧。
+
+P.S. 近期如果有空，再找時間更新到xelatex版本的。
