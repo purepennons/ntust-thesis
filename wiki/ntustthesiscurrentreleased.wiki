@@ -2,7 +2,7 @@
 
 = ntust-thesis v1.5=
 
-此版本將中文部分由原本的CJK-LaTeX改為XeLaTex
+此版本將中文部分由原本的CJK-LaTeX改為XeLaTex.
 
 預設中文字型為標楷體
 預設英文字型為Arial
